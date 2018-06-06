@@ -1,17 +1,38 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:$PATH
 
-# change conda environment
-source activate py35
+# added by MacPorts 2.4.2 installer 
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+export MANPATH=/opt/local/share/man:$MANPATH
+export DISPLAY=:0.0
 
-# # Path for CUDA
-# export PATH=/usr/local/cuda-8.0/bin${PATH:+:${PATH}}
-# export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
-# export CUDA_HOME=/usr/local/cuda-8.0
-# export LD_LIBRARY_PATH=/usr/local/cuda-8.0/extras/CUPTI/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+# added by Anaconda3 5.0.0 installer
+export PATH="/Users/XikunZhang/Applications/anaconda3/bin:$PATH"
+
+#added for apache ant
+export PATH="/Applications/apache-ant-1.10.1/bin:$PATH" 
+export ANT_HOME="/Applications/apache-ant-1.10.1"
+
+# add JAVA_HOME environment variable
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home
 
 # Path to your oh-my-zsh installation.
-export ZSH=~/.oh-my-zsh
+export ZSH=/Users/XikunZhang/.oh-my-zsh
+
+# added for MySQL client
+export PATH=$PATH:/usr/local/mysql/bin
+
+# added for BLAS Library
+export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:~/Applications/BLAS-3.8.0:~/Applications
+
+# added for Hadoop
+export HADOOP_HOME=$HOME/Applications/hadoop-3.1.0
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HADOOP_HOME/lib/native
+export PATH=$PATH:$HADOOP_HOME/bin 
+
+# added for Spark
+export SPARK_HOME=$HOME/Applications/spark-2.3.0-bin-hadoop2.7
+export PATH=$PATH:$SPARK_HOME/bin 
 
 # added for truepie_demo 
 # export PYTHONPATH=$PYTHONPATH:/Users/XikunZhang/OneDrive-UIUC/text_mining_research 
@@ -69,11 +90,16 @@ plugins=(
 git 
 zsh-autosuggestions
 common-aliases
-zsh-syntax-highlighting
+autojump
+dirhistory
+screen
+tmux
+vi-mode
+wd
 )
 
 source $ZSH/oh-my-zsh.sh
-# source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # User configuration
 
@@ -83,11 +109,11 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-else
-  export EDITOR='mvim -v'
+if [[ -z $SSH_CONNECTION ]]; then
+  alias vim='mvim -v'
 fi
+
+export EDITOR='vim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -101,12 +127,14 @@ fi
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshconfig="$EDITOR ~/.zshrc"
 alias ohmyzsh="cd ~/.oh-my-zsh"
 # alias vim="$EDITOR"
 alias vimrcs="cd ~/.vim_runtime/vimrcs"
-alias la="ls -a"
+alias study="cd /Users/XikunZhang/OneDrive\ -\ University\ of\ Illinois\ -\ Urbana/UIUC\ study "
+alias ariang="/Applications/BaiduExporter-master/aria2c/start.sh"
+alias la="ls -AFh"
 alias lla="ls -lAFh"
+alias ll="ls -lFh"
 
 # hide "user@hostname" info in the command prompt
 prompt_context() {
@@ -115,3 +143,4 @@ prompt_context() {
   fi
 }
 
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
