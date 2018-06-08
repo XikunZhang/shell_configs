@@ -96,10 +96,10 @@ screen
 tmux
 vi-mode
 wd
+zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # User configuration
 
@@ -127,6 +127,7 @@ export EDITOR='vim'
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
+alias zshconfig="$EDITOR ~/.zshrc"
 alias ohmyzsh="cd ~/.oh-my-zsh"
 # alias vim="$EDITOR"
 alias vimrcs="cd ~/.vim_runtime/vimrcs"
