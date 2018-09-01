@@ -17,7 +17,7 @@ export ANT_HOME="/Applications/apache-ant-1.10.1"
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/XikunZhang/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # added for MySQL client
 export PATH=$PATH:/usr/local/mysql/bin
@@ -98,6 +98,9 @@ vi-mode
 wd
 zsh-syntax-highlighting
 )
+
+# Added for plugin "autojump"
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
 source $ZSH/oh-my-zsh.sh
 
