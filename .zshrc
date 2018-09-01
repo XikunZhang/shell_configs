@@ -17,7 +17,7 @@ export ANT_HOME="/Applications/apache-ant-1.10.1"
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/XikunZhang/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # added for MySQL client
 export PATH=$PATH:/usr/local/mysql/bin
@@ -36,6 +36,13 @@ export PATH=$PATH:$SPARK_HOME/bin
 
 # added for truepie_demo 
 # export PYTHONPATH=$PYTHONPATH:/Users/XikunZhang/OneDrive-UIUC/text_mining_research 
+
+# Set name of the theme to load. Optionally, if you set this to "random"
+# it'll load a random theme each time that oh-my-zsh is loaded.
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+
+# ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="agnoster"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -74,14 +81,6 @@ COMPLETION_WAITING_DOTS="true"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
-# source $ZSH/oh-my-zsh.sh
-
-source $HOME/antigen.zsh
-
-# Load the oh-my-zsh's library.
-antigen use oh-my-zsh
-
-# Bundles from the default repo (robbyrussell's oh-my-zsh).
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -99,6 +98,9 @@ vi-mode
 wd
 zsh-syntax-highlighting
 )
+
+# Added for plugin "autojump"
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
 source $ZSH/oh-my-zsh.sh
 
@@ -144,6 +146,5 @@ prompt_context() {
 #    prompt_segment black default "%(!.%{%F{yellow}%}.)$USER"
   fi
 }
-echo 4
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
