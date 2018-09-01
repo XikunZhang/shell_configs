@@ -37,15 +37,6 @@ export PATH=$PATH:$SPARK_HOME/bin
 # added for truepie_demo 
 # export PYTHONPATH=$PYTHONPATH:/Users/XikunZhang/OneDrive-UIUC/text_mining_research 
 
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-
-# ZSH_THEME="powerlevel9k/powerlevel9k"
-# ZSH_THEME="agnoster"
-antigen theme agnoster
-
-
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -83,7 +74,9 @@ COMPLETION_WAITING_DOTS="true"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
-source /usr/local/share/antigen/antigen.zsh
+# source $ZSH/oh-my-zsh.sh
+
+source $HOME/antigen.zsh
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
@@ -94,9 +87,10 @@ antigen use oh-my-zsh
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+
 antigen bundle git
 antigen bundle heroku
-antigen bundle command-not-found
+# antigen bundle command-not-found
 antigen bundle zsh-autosuggestions
 antigen bundle common-aliases
 antigen bundle autojump
@@ -109,10 +103,18 @@ antigen bundle wd
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
 
+# Set name of the theme to load. Optionally, if you set this to "random"
+# it'll load a random theme each time that oh-my-zsh is loaded.
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+
+# ZSH_THEME="powerlevel9k/powerlevel9k"
+echo 1
+echo 2
+antigen theme agnoster
+
 # Tell Antigen that you're done.
 antigen apply
-
-source $ZSH/oh-my-zsh.sh
+echo 3
 
 # User configuration
 
@@ -156,5 +158,6 @@ prompt_context() {
 #    prompt_segment black default "%(!.%{%F{yellow}%}.)$USER"
   fi
 }
+echo 4
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
