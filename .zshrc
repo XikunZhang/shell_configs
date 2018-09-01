@@ -42,7 +42,9 @@ export PATH=$PATH:$SPARK_HOME/bin
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 
 # ZSH_THEME="powerlevel9k/powerlevel9k"
-ZSH_THEME="agnoster"
+# ZSH_THEME="agnoster"
+antigen theme agnoster
+
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -81,26 +83,34 @@ COMPLETION_WAITING_DOTS="true"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
+source /usr/local/share/antigen/antigen.zsh
+
+# Load the oh-my-zsh's library.
+antigen use oh-my-zsh
+
+# Bundles from the default repo (robbyrussell's oh-my-zsh).
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(
-git 
-zsh-autosuggestions
-common-aliases
-autojump
-dirhistory
-screen
-tmux
-vi-mode
-wd
-zsh-syntax-highlighting
-)
+antigen bundle git
+antigen bundle heroku
+antigen bundle command-not-found
+antigen bundle zsh-autosuggestions
+antigen bundle common-aliases
+antigen bundle autojump
+antigen bundle dirhistory
+antigen bundle screen
+antigen bundle tmux
+antigen bundle vi-mode
+antigen bundle wd
 
-# Added for plugin "autojump"
-[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+# Syntax highlighting bundle.
+antigen bundle zsh-users/zsh-syntax-highlighting
+
+# Tell Antigen that you're done.
+antigen apply
 
 source $ZSH/oh-my-zsh.sh
 
