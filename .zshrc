@@ -87,8 +87,8 @@ COMPLETION_WAITING_DOTS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+# plugins from the default repo ("robbyrussell/oh-my-zsh plugins/")
 git 
-zsh-autosuggestions
 common-aliases
 autojump
 dirhistory
@@ -96,11 +96,16 @@ screen
 tmux
 vi-mode
 wd
+heroku
+# command-not-found
+
+# plugins from the "zsh-users/$PLUGIN_NAME /" repo
+zsh-autosuggestions
 zsh-syntax-highlighting
 )
 
 # Added for plugin "autojump"
-[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 
 source $ZSH/oh-my-zsh.sh
 
