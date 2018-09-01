@@ -17,7 +17,7 @@ export ANT_HOME="/Applications/apache-ant-1.10.1"
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home
 
 # Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
+export ZSH=/Users/XikunZhang/.oh-my-zsh
 
 # added for MySQL client
 export PATH=$PATH:/usr/local/mysql/bin
@@ -87,34 +87,20 @@ antigen use oh-my-zsh
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+plugins=(
+git 
+zsh-autosuggestions
+common-aliases
+autojump
+dirhistory
+screen
+tmux
+vi-mode
+wd
+zsh-syntax-highlighting
+)
 
-antigen bundle git
-antigen bundle heroku
-# antigen bundle command-not-found
-antigen bundle zsh-autosuggestions
-antigen bundle common-aliases
-antigen bundle autojump
-antigen bundle dirhistory
-antigen bundle screen
-antigen bundle tmux
-antigen bundle vi-mode
-antigen bundle wd
-
-# Syntax highlighting bundle.
-antigen bundle zsh-users/zsh-syntax-highlighting
-
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-
-# ZSH_THEME="powerlevel9k/powerlevel9k"
-echo 1
-echo 2
-antigen theme agnoster
-
-# Tell Antigen that you're done.
-antigen apply
-echo 3
+source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
